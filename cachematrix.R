@@ -1,7 +1,5 @@
 ## Matrix inversion is usually a costly computation. To avoid this, we create a funtion that caches the inverse 
-## of a matrix rather than compute it repeatedly
-
-## Below are two functions that are used to create a special object that stores a matrix and cache's its inversion
+## of a matrix rather than compute it repeatedly. Below are two functions that are used to create a special object that stores a matrix and cache's its inversion
 
 ## This function creates a special "matrix" that peforms the following operation:
 ## 1. set the value of the matrix
