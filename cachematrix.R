@@ -12,13 +12,13 @@
 ## 4. get the value of the inversion of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-        ## invMatrix : inverse matrix value
+        ## invMatrix : inverse matrix 
         invMatrix <- NULL # default value
         
         ##setMatrix function: set matrix and set default value for invMatrix 
         setMatrix <- function(matrix) {
                 x <<- matrix ## set matrix value
-                invMatrix <<- NULL ## set default inverse matrix
+                invMatrix <<- NULL ## set default inversse matrix
         }
         
         ## getMatrix function: get matrix
@@ -58,7 +58,7 @@ cacheSolve <- function(x, ...) {
         
         ## First, retrieve the matrix
         matrix <- x$getMatrix()
-        ## solve matrix inverse
+        ## solve matrix inversion
         invMatrix <- solve(matrix, ...)
         ## save solution to inverse matrix to cache for future retrieval
         x$setInvMatrix(invMatrix) 
