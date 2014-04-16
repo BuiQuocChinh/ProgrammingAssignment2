@@ -1,5 +1,7 @@
-## Matrix inversion is usually a costly computation. Therefore, inversion of a matrix is usually cached rather than compute it repeatedly. 
-## Below are a pair of functions that are used to create a special object that stores a matrix and cache's its inversion
+## Matrix inversion is usually a costly computation. Therefore, inversion of a matrix is usually cached 
+## rather than compute it repeatedly. 
+## Below are a pair of functions that are used to create a special object that stores 
+## a matrix and cache's its inversion
 
 
 ## Function: makeCacheMatrix
