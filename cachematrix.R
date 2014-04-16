@@ -42,7 +42,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Otherwise, it calculates the mean of the data and sets the value of the mean in the cache via the setmean function.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## Return the inversion of the matrix 'x'
         invMatrix <- x$getInvMatrix()
         if(!is.null(invMatrix)) {
                 message("getting cached data")
