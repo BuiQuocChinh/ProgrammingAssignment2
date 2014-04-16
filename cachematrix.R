@@ -12,23 +12,25 @@
 ## 4. get the value of the inversion of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-        # invMatrix : inverse matrix value
+        ## invMatrix : inverse matrix value
         invMatrix <- NULL # default value
         
-        #setMatrix function: set matrix and set default value for invMatrix 
+        ##setMatrix function: set matrix and set default value for invMatrix 
         setMatrix <- function(matrix) {
-                x <<- matrix # set matrix value
-                invMatrix <<- NULL # set default inverse matrix
+                x <<- matrix ## set matrix value
+                invMatrix <<- NULL ## set default inverse matrix
         }
-        #getMatrix function: get matrix
-        getMatrix <- function() x # return matrix
         
-        #setInvMatrix function: set inverse matrix
+        ## getMatrix function: get matrix
+        getMatrix <- function() x ## return matrix
+        
+        ## setInvMatrix function: set inverse matrix
         setInvMatrix <- function(inverse) invMatrix <<- inverse
         
-        #getInvMatrix function: get inverse matrix
+        ## getInvMatrix function: get inverse matrix
         getInvMatrix <- function() invMatrix
         
+        ## list of operations for the makeCacheMatrix
         list(setMatrix = setMatrix, getMatrix = getMatrix,
              setInvMatrix = setInvMatrix,
              getInvMatrix = getInvMatrix)
@@ -45,15 +47,22 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         ## Return the inversion of the matrix 'x'
         invMatrix <- x$getInvMatrix()
+        
+        ## if matrix inversion exists, return cached data
         if(!is.null(invMatrix)) {
                 message("getting cached data")
                 return(invMatrix)
         }
         
-        #invMatrix is not yet calculated, now calculate the inverse
+        ##invMatrix is not yet calculated, now calculate the inverse
+        
+        ## First, retrieve the matrix
         matrix <- x$getMatrix()
+        ## solve matrix inverse
         invMatrix <- solve(matrix, ...)
-        x$setInvMatrix(invMatrix) # store invMatrix
+        ## save solution to inverse matrix to cache for future retrieval
+        x$setInvMatrix(invMatrix) 
+        ## return the solution
         invMatrix
         
 }
